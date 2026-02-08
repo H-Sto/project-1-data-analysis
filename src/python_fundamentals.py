@@ -43,10 +43,12 @@ def summarise_numbers(numbers):
 
 
 if __name__ == "__main__":
+    # ---- Core Python: functions + validation ----
     values = [3, 7, 2, 9, 4]
     summary = summarise_numbers(values)
     print(summary)
 
+    # ---- pandas: create a small dataset ----
     data = {
         "site": ["A", "B", "C", "D"],
         "rainfall_mm": [12.4, 8.1, 15.6, 9.3],
@@ -63,3 +65,19 @@ if __name__ == "__main__":
 
     print("\nSummary statistics:")
     print(df.describe())
+
+    # ---- pandas: filtering ----
+    high_rainfall = df[df["rainfall_mm"] > 10]
+
+    print("\nSites with rainfall > 10 mm:")
+    print(high_rainfall)
+
+    # ---- pandas: derived variable ----
+    df["runoff_ratio"] = df["runoff_mm"] / df["rainfall_mm"]
+
+    print("\nRunoff ratio by site:")
+    print(df[["site", "runoff_ratio"]])
+
+    # ---- simple analysis question ----
+    max_ratio_site = df.loc[df["runoff_ratio"].idxmax(), "site"]
+    print(f"\nSite with highest runoff ratio: {max_ratio_site}")
