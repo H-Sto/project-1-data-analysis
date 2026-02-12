@@ -1,34 +1,23 @@
-# Project 1 – Python Data Analysis
+# Project 1 – River Discharge Data Analysis (Python)
 
 ## Overview
-This project demonstrates a clean, reproducible Python data analysis workflow using a real-world dataset.
-The focus is on data cleaning, exploratory data analysis, and clear visual communication.
+This project demonstrates a reproducible Python data analysis workflow:
+raw data → cleaning → exploratory analysis → saved figures.
 
-## Objectives
-- Analyse a non-trivial, messy real-world dataset
-- Clean and transform data using Python (pandas, numpy)
-- Perform exploratory data analysis (EDA)
-- Produce clear, publication-quality visualisations
-- Follow best practices in project structure and reproducibility
+## Dataset
+- Raw file: `data/raw/river_discharge_raw.csv`
+- Cleaned file: `data/processed/river_discharge_clean.csv`
+- Known issues in raw data: missing values, non-numeric entries in discharge column
 
-## Data
-A public, real-world dataset will be used in this project.
-Raw data will be stored in `data/raw/` and never modified directly.
-All derived datasets will be written to `data/processed/`.
+## Project Structure
+- `data/raw/` raw dataset (never edited)
+- `data/processed/` cleaned outputs
+- `src/` scripts (cleaning + EDA)
+- `reports/figures/` saved charts
 
-The data source will be fully documented once selected.
-
-## Tools
-- Python
-- pandas
-- numpy
-- matplotlib
-- Jupyter
-
-## Outputs
-- Cleaned datasets
-- Exploratory analysis notebooks
-- Visualisations saved to `reports/figures/`
-
-## Status
-🚧 In progress — portfolio build
+## How to run
+### 1) Set up environment
+```bash
+conda create -n portfolio-week1 python=3.11 -y
+conda activate portfolio-week1
+pip install -r requirements.txt
